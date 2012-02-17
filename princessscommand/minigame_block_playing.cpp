@@ -7,11 +7,14 @@ void Update_Playing(Gamedata& gameData){
 	UpdateBars(gameData);
 	MoveAllBalls(gameData);
 	UpdateBombBits(gameData);
+
+	//壊せるブロック全て破壊したら次のステージへ進む
 	if(gameData.stageInfo.breakableBlockN <= 0){
 		gameData.sm = STAGE_CLEAR;
 	}
 	UpdateBlockBits(gameData);
-	Update ltdDrawObjs
+
+	//UpdateLtdDrbObj関数にまとめる！
 	for(int i = 0; i < boost::numeric_cast<int>(gameData.ltdDrawableObjs.size()); i++){
 		LtdDrawableObj& obj = gameData.ltdDrawableObjs[i];
 		if(obj.limit <= obj.count){
@@ -22,15 +25,17 @@ void Update_Playing(Gamedata& gameData){
 		}
 	}
 #ifdef DEBUGMODE
+
+	//Bキーが押されていたら異次元からボールがぞろぞろ
 	if(IsKeyPressed(Keyboard_Get(KEY_INPUT_B))){
-	CharaObj c;
-	Polar pl;
-	c.p.x(100);
-	c.p.y(100);
-	pl.angle = GetRand(360);
-	pl.speed = GetRand(5) + 3;
-	ConvertPolarToCartesian(c.v, pl);
-	gameData.charaInfo.balls.push_back(c);
+		CharaObj c;
+		Polar pl;
+		c.p.x(100);
+		c.p.y(100);
+		pl.angle = GetRand(360);
+		pl.speed = GetRand(5) + 3;
+		ConvertPolarToCartesian(c.v, pl);
+		gameData.charaInfo.balls.push_back(c);
 	}
 #endif
 
@@ -57,6 +62,7 @@ void Draw_Playing(Gamedata& gameData){
 		}
 	}
 
+	//ボールが全て無くなったらDrop表示
 	if(gameData.charaInfo.balls.size() == 0){
 		gameData.sm = DROP;
 	}

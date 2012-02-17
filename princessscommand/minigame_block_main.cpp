@@ -22,7 +22,9 @@ int Minigame::Block::Main_Func(
 	InitGameData(gameData);
 	gameData.fpsCounter.Init();
 
+	//バグベアード様降臨
 	//MyBugInit();
+	
 	while(ScreenFlip()==0 && ProcessMessage()==0 && ClearDrawScreen()==0 && Keyboard_Get( KEY_INPUT_ESCAPE ) == 0 ){
 		Keyboard_Update();
 		UpdateMouse();
@@ -87,12 +89,15 @@ int Minigame::Block::Main_Func(
 
 
 
+
+//ボールの描画
 void DrawBall(CharaObj& c, PictureMap& g){
 	if(DrawGraph(static_cast<int>(c.p.x()), static_cast<int>(c.p.y()), g["ball3"], TRUE) == -1){
 		pd(CANT_DRAW_GRAPHIC_STR);
 	}
 }
 
+//全てのボールの描画
 void DrawAllBalls(Gamedata &gameData){
 	PictureMap &g = gameData.graphicData;
 	CharaObjs &balls = gameData.charaInfo.balls;
@@ -141,12 +146,12 @@ void ConvertPolarToCartesian(PointF& buf, Polar& pl){
 }
 
 //直交座標から極座標に変換　　動作がおかしいかも
-void ConvertCartesianToPolar(Polar& buf, PointF& p){
-	float radAngle = atan2f(p.y(), p.x());
-	float r = 1.0f / cosf(radAngle);
-	buf.speed = r * p.y();
-	buf.angle = ConvertRadToDeg(radAngle);
-}
+//void ConvertCartesianToPolar(Polar& buf, PointF& p){
+//        float radAngle = atan2f(p.y(), p.x());
+//        float r = 1.0f / cosf(radAngle);
+//        buf.speed = r * p.y();
+//        buf.angle = ConvertRadToDeg(radAngle);
+//}
 
 void GetCharaCenter(PointF& buf, const PointF& p, float size){
 	float half_size = size / (float)2;

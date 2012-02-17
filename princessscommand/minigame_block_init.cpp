@@ -151,18 +151,23 @@ void Init(Gamedata &gameData)
 	title_logo.SetInterval(PRESS_ENTER_KEY_INTERVAL );
 	gameData.intervalVisibleObjs["title_logo"] = title_logo;
 
+
+	//Ready表示の設定
 	IntervalVisibleObj ready_logo;
 	ready_logo.SetInterval(READY_INTERVAL);
 	gameData.intervalVisibleObjs["ready_logo"] = ready_logo;
 
+	//Stage Clear表示の設定
 	IntervalVisibleObj stage_clear_logo;
 	stage_clear_logo.SetInterval(STAGE_CLEAR_INTERVAL);
 	gameData.intervalVisibleObjs["stage_clear_logo"] = stage_clear_logo;
 
+	//Drop表示の設定
 	IntervalVisibleObj drop_logo;
 	drop_logo.SetInterval(DROP_INTERVAL);
 	gameData.intervalVisibleObjs["drop_logo"] = drop_logo;
 
+	//タイトル画面からゲームがスタートする
 	gameData.sm = TITLE;
 
 	//タイトル画面用にブロックのCharaObj情報を初期化
@@ -172,6 +177,8 @@ void Init(Gamedata &gameData)
 	InitCharaInfo(gameData);
 }
 
+
+//バーの初期化
 void InitBar(Gamedata& gameData){
 	CharaObjs& bars = gameData.charaInfo.bars;
 	bars.clear();
@@ -226,8 +233,6 @@ void InitCharaInfo(Gamedata &gamedata){
 		c.size.y(BLOCK_SIZE);
 		pl.angle = static_cast<float>(GetRand(MAX_DEG));
 		pl.speed = static_cast<float>(BALL_MIN_SPEED + GetRand(BALL_MAX_SPEED - BALL_MIN_SPEED));
-		//c.pl.angle = static_cast<float>(GetRand(MAX_DEG));
-		//c.pl.speed = static_cast<float>(BALL_MIN_SPEED + GetRand(BALL_MAX_SPEED - BALL_MIN_SPEED));
 		if(pl.speed == 0){
 			pd("zero speed!");
 		}
@@ -238,8 +243,6 @@ void InitCharaInfo(Gamedata &gamedata){
 
 void InitGameData(Gamedata &gameData){
 	gameData.score = 0;
-	//gameData.pek_logo_visible = true;
-	//gameData.pek_logo_count = 0;
 	gameData.stageInfo.currentStage = 0;
 	gameData.sm = INIT;
 	

@@ -3,6 +3,8 @@
 
 namespace Minigame{
 	namespace Block{
+
+//ブロック崩しゲームの処理の流れ
 enum SCREENMODE{
 	INIT,
 	TITLE,
@@ -14,6 +16,8 @@ enum SCREENMODE{
 	GAMEOVER
 };
 
+
+//ブロックの種類
 enum BLOCK_TYPE{
 	NOTHING,
 	NORMAL,
@@ -48,6 +52,8 @@ enum LTD_DRAWABLE_OBJ_TYPE{
 	LTD_DRAWABLE_OBJ_EXPLOSION
 };
 
+
+//タイトル画面で選べるゲームモード
 enum GAMEMODE{
 	RANKINGMODE,
 	RETRYMODE

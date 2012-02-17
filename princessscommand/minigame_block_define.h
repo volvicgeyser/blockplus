@@ -11,6 +11,8 @@ namespace Minigame{
 #define ERROR_STR TEXT("Error")
 
 #define MAP_STR TEXT("map")
+
+//マップの拡張子
 #define MP_STR TEXT(".mp")
 
 //画面サイズ
