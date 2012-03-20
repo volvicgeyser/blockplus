@@ -1,8 +1,13 @@
+#include"minigame_block_stdafx.h"
 #include"minigame_block_func.h"
 #include"minigame_block_debug.h"
 #include"minigame_block_enum.h"
+#include"minigame_block_define.h"
+#include"minigame_block_load_stage.h"
 namespace Minigame{
 	namespace Block{
+
+using namespace std;
 
 void LoadGraphic(string name, string filename, PictureMap &graphicData)
 {

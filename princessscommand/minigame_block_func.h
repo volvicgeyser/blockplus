@@ -3,44 +3,9 @@
 
 //ゲームの動作に関する関数やインクルード
 
-//必要最低限のものだけインクルード
-#define WIN32_LEAN_AND_MEAN 
-
-#include<DxLib.h>
-#include<tchar.h>
-#include<map>
-#include<vector>
-#include<string>
-#include<sstream>
-#include<algorithm>
-#include<numeric>
-#include<functional>
-#include<fstream>
-#include<stdexcept>
+#include "minigame_block_stdafx.h"
+#include "minigame_block_struct.h"
 #include"func.h"
-#include<windows.h>
-#include"minigame_block_math_helper.h"
-#include"minigame_block_typedef.h"
-#include"minigame_block_struct.h"
-#include"minigame_block_define.h"
-#include"minigame_block_fpscounter.h"
-#include"minigame_block_load_stage.h"
-#include"minigame_block_keyboard.h"
-#include"minigame_block_point.h"
-#include"minigame_block_line.h"
-#include"minigame_block_enum.h"
-#include<iostream>
-#include<shlwapi.h>
-#include<boost/shared_ptr.hpp>
-#include<boost/bind.hpp>
-#include<boost/unordered_map.hpp>
-#include<boost/ref.hpp>
-#include<boost/function.hpp>
-#include<boost/cast.hpp>
-#include<boost/range/algorithm/for_each.hpp>
-#include<boost/lexical_cast.hpp>
-#include "minigame_block_debug.h"
-#pragma comment(lib, "shlwapi.lib")
 
 namespace Minigame{
 	namespace Block{

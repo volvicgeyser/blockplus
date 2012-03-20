@@ -1,3 +1,4 @@
+#include"minigame_block_func.h"
 #include"minigame_block_fpscounter.h"
 
 

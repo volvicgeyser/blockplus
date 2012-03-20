@@ -1,14 +1,20 @@
 #include"minigame_block_func.h"
+#include"minigame_block_keyboard.h"
+#include"minigame_block_enum.h"
+#include"minigame_block_define.h"
+#include"minigame_block_debug.h"
 
 namespace Minigame{
 	namespace Block{
 //タイトル画面の動作
 void Title_Update(Gamedata &gameData){
+
+	//全てのボールの移動処理
 	MoveAllBalls(gameData);
+
 	UpdateBombBits(gameData);
 	UpdateBlockBits(gameData);
 	gameData.intervalVisibleObjs["title_logo"].Update();
-
 	CharaObjs& blocks = gameData.charaInfo.blocks;
 
 	//エンターキーが押されたら次のシーンへ
@@ -17,6 +23,8 @@ void Title_Update(Gamedata &gameData){
 		gameData.charaInfo.bomb_bits.clear();
 		GoNextStage(gameData);
 	}
+
+	//ブロックが０個になればステージを初期化（ブロックを元に戻す)する
 	if(blocks.size() == 0){
 		InitBlocks(gameData);
 	}

@@ -1,4 +1,6 @@
+#include"minigame_block_func.h"
 #include "minigame_block_load_stage.h"
+#include"minigame_block_define.h"
 #include"minigame_block_debug.h"
 //#include"mybug.h"
 namespace Minigame{

@@ -1,5 +1,6 @@
 #include"minigame_block_func.h"
-
+#include"minigame_block_struct.h"
+#include"minigame_block_define.h"
 namespace Minigame{
 	namespace Block{
 //|------------------------------------オブジェクトの当たり判定に関する関数-----------------------------------------------------|

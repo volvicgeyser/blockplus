@@ -1,5 +1,6 @@
 #include"minigame_block_func.h"
-
+#include"minigame_block_keyboard.h"
+#include"minigame_block_enum.h"
 
 //Ending‚Ì•`‰æ
 

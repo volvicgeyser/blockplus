@@ -1,4 +1,7 @@
 #include"minigame_block_func.h"
+#include"minigame_block_define.h"
+#include"minigame_block_enum.h"
+#include"minigame_block_keyboard.h"
 
 //ƒ{[ƒ‹‚ª—‚¿‚½‚Ìˆ—
 namespace Minigame{

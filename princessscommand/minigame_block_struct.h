@@ -1,7 +1,9 @@
 #ifndef DEF_MINIGAME_BLOCK_STRUCT_H
 #define DEF_MINIGAME_BLOCK_STRUCT_H
-#include<vector>
-#include<boost/unordered_map.hpp>
+//#include<vector>
+//#include<boost/unordered_map.hpp>
+#include"minigame_block_stdafx.h"
+#include"minigame_block_typedef.h"
 #include"minigame_block_fpscounter.h"
 #include"minigame_block_point.h"
 #include"minigame_block_interval_visible_obj.h"

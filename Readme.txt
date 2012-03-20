@@ -1,6 +1,6 @@
 The Block Plus(Partial source codes)
 
-同人ゲーム、王女の号令(http://studioobor.chottu.net/pricomma/about.html)に
+同人ゲーム、王女の号令(http://studioobor.chottu.net/pricomma/about.html )に
 組み込まれる予定のミニゲームのブロック崩しゲーム。
 一部のコードしか載せてないのでコンパイルできません。
 

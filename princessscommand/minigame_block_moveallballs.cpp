@@ -1,5 +1,7 @@
 #include"minigame_block_func.h"
-
+#include"minigame_block_math_helper.h"
+#include"minigame_block_define.h"
+#include"minigame_block_enum.h"
 namespace Minigame{
 	namespace Block{
 
