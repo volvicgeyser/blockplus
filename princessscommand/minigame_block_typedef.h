@@ -1,5 +1,8 @@
 #ifndef DEF_MINIGAME_BLOCK_TYPEDEF_H
 #define DEF_MINIGAME_BLOCK_TYPEDEF_H
+
+//typedef
+
 //struct CharaObj;
 
 //std‚Ìmap

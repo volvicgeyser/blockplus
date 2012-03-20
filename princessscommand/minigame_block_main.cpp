@@ -8,7 +8,7 @@ using namespace std;
 
 namespace Minigame{
 namespace Block{
-int Minigame::Block::Main_Func(
+int Main_Func(
 	System_t *system_t,
 	Option_t *option_t,
 	Speak_t *speak_t,

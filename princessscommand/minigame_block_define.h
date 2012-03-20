@@ -1,5 +1,8 @@
 #ifndef DEF_MINIGAME_BLOCK_DEFINE_H
 #define DEF_MINIGAME_BLOCK_DEFINE_H
+
+//ƒQ[ƒ€‚Åg—p‚·‚é’è”
+
 namespace Minigame{
 	namespace Block{
 

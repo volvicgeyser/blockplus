@@ -1,6 +1,8 @@
 #ifndef DEF_MINIGAME_BLOCK_ENUM_H
 #define DEF_MINIGAME_BLOCK_ENUM_H
 
+//—ñ‹“‘Ì‚Ì’è‹`
+
 namespace Minigame{
 	namespace Block{
 

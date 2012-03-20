@@ -1,5 +1,8 @@
 #include"minigame_block_func.h"
 
+
+//Ending‚Ì•`‰æ
+
 namespace Minigame{
 	namespace Block{
 	

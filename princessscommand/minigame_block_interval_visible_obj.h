@@ -4,6 +4,7 @@
 namespace Minigame{
 	namespace Block{
 	
+//指定した一定の間隔だけ表示される描画オブジェクト
 class IntervalVisibleObj{
 private:
 	bool visible_;

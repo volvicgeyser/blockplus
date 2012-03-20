@@ -6,7 +6,7 @@
 #include"minigame_block_point.h"
 #include"minigame_block_interval_visible_obj.h"
 
-
+//構造体
 //boostのハッシュ関数によるmap
 typedef boost::unordered_map<std::string, int> PictureMap;
 typedef boost::unordered_map<std::string, Minigame::Block::IntervalVisibleObj> IntervalVisibleObjMap;

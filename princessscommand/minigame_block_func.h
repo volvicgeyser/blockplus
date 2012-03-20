@@ -1,6 +1,8 @@
 #ifndef DEF_MINIGAME_BLOCK_FUNC_H
 #define DEF_MINIGAME_BLOCK_FUNC_H
 
+//ゲームの動作に関する関数やインクルード
+
 //必要最低限のものだけインクルード
 #define WIN32_LEAN_AND_MEAN 
 

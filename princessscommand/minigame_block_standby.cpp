@@ -2,7 +2,8 @@
 
 namespace Minigame{
 	namespace Block{
-	
+
+//ボール発射待機中の画面を描画	
 void Standby_Draw(Gamedata& gameData){
 	PictureMap& g = gameData.graphicData;
 	DrawBlocks(gameData);
@@ -14,6 +15,8 @@ void Standby_Draw(Gamedata& gameData){
 	DrawBars(gameData);
 	DrawScore(gameData);
 }
+
+//ボール発射待機中の処理
 void Standby_Update(Gamedata& gameData){
 	gameData.intervalVisibleObjs["ready_logo"].Update();
 	CharaObjs& balls = gameData.charaInfo.balls;

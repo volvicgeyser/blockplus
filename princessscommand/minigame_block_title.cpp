@@ -39,10 +39,10 @@ void Title_Draw(Gamedata &gameData){
 		pd(CANT_DRAW_GRAPHIC_STR);
 	}
 	
-	if( DrawGraph(RANKINGMODE_X, RANKINGMODE_Y, g["rankingmode"], TRUE) ){
-	}
-	if( DrawGraph(RETRYMODE_X, RETRYMODE_Y, g["retrymode"], TRUE) ){
-	}
+	//if( DrawGraph(RANKINGMODE_X, RANKINGMODE_Y, g["rankingmode"], TRUE) ){
+	//}
+	//if( DrawGraph(RETRYMODE_X, RETRYMODE_Y, g["retrymode"], TRUE) ){
+	//}
 
 	if( DrawGraph(TITLE_PLUS_X, TITLE_PLUS_Y, g[PLUS_STR], TRUE)){}
 	if( DrawGraph(VERSION_X, VERSION_Y, g[VERSION_STR], TRUE) ){
@@ -53,7 +53,7 @@ void Title_Draw(Gamedata &gameData){
 		
 	}
 	const char* message = "このゲームは本編についてくる予定の製作途中のミニゲームです。Enterキー or Spaceキー or マウスクリックで \
-先に進むことができます。製作: 大先生";
+先に進むことができます。製作: ひでまさ＠D先生";
 	DrawString( (200 + SCREEN_SIZE_HEIGHT - gameData.totalFrameCount % 800 * 3), 500, message, GetColor(255,255,255));
 }
 

@@ -4,6 +4,8 @@
 #include"DxLib.h"
 
 //dxライブラリに依存。
+//FPSの管理を行うクラス
+
 namespace Minigame{
 	namespace Block{
 

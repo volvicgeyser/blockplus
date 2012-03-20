@@ -2,7 +2,8 @@
 #define MINIGAME_BLOCK_POINT
 
 
-//注意！　演算子のオーバーロードでNULLのチェックは省略してる
+//X座標とY座標を持つPointクラス
+
 namespace Minigame{
 	namespace Block{
 template <typename T>

@@ -4,6 +4,9 @@ The Block Plus(Partial source codes)
 組み込まれる予定のミニゲームのブロック崩しゲーム。
 一部のコードしか載せてないのでコンパイルできません。
 
+■操作方法
+基本的にはクリックすると進んでいきます。
+今の段階では何度でもコンティニューができます。
 
 
 開発環境
@@ -14,10 +17,10 @@ Microsoft Visual C++ 2008 Express Edition
 使ってるライブラリ
  Libraries
 
-DXライブラリ(DX library)
+DXライブラリ
 http://homepage2.nifty.com/natupaji/DxLib/
 
-バグベアード(bugbeard)
+バグベアード
 http://tricklib.com/cxx/ex/bugbeard/
 
 Boost 1.47

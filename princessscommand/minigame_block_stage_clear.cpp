@@ -3,6 +3,7 @@
 namespace Minigame{
 	namespace Block{
 
+//ステージクリアの画面を表示
 void Draw_StageClear(Gamedata& gameData){
 	PictureMap& g = gameData.graphicData;
 	DrawBlocks(gameData);

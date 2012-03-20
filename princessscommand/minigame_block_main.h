@@ -2,7 +2,7 @@
 #define DEF_MINIGAME_BLOCK_MAIN_H
 #include<DxLib.h>
 #include"struct.h"
-#include"func.h"
+//#include"func.h"
 
 enum MINIGAME_BLOCK_SCREENMODE{
 	MINIGAME_BLOCK_START,

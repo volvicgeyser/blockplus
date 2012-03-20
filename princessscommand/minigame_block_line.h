@@ -1,6 +1,12 @@
 #ifndef DEF_MINIGAME_BLOCK_LINE_H
 #define DEF_MINIGAME_BLOCK_LINE_H
 
+
+//未使用
+//線のクラス
+
+
+
 namespace Minigame{
 	namespace Block{
 		

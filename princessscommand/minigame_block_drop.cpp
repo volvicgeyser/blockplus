@@ -1,6 +1,9 @@
 #include"minigame_block_func.h"
+
+//ƒ{[ƒ‹‚ª—‚¿‚½‚Ìˆ—
 namespace Minigame{
 	namespace Block{
+
 void Drop_Draw(Gamedata& gameData){
 	DrawBlocks(gameData);
 	PictureMap g = gameData.graphicData;

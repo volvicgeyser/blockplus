@@ -1,6 +1,11 @@
 #ifndef DEF_MINIGAME_BLOCK_MATH_HELPER_H
 #define DEF_MNIGAME_BLOCK_MATH_HELPER_H
 #include<cmath>
+
+//主に計算の補助
+//高速な三角関数を実装する予定だったが、
+//思ったより早くならなかったので標準の関数を使用
+
 namespace Minigame{
 	namespace Block{
 

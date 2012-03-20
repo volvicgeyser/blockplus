@@ -2,6 +2,8 @@
 
 namespace Minigame{
 	namespace Block{
+
+//ƒ{[ƒ‹‚ÌˆÚ“®ŠÖ”
 	
 void MoveAllBalls(Gamedata &gameData){
 	CharaObjs &balls = gameData.charaInfo.balls;
