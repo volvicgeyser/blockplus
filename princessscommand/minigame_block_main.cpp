@@ -95,17 +95,17 @@ int Main_Func(
 
 
 //ボールの描画
-void DrawBall(CharaObj& c, PictureMap& g){
+static void DrawBall(const CharaObj& c, PictureMap& g){
 	if(DrawGraph(static_cast<int>(c.p.x()), static_cast<int>(c.p.y()), g["ball3"], TRUE) == -1){
 		pd(CANT_DRAW_GRAPHIC_STR);
 	}
 }
 
 //全てのボールの描画
-void DrawAllBalls(Gamedata &gameData){
-	PictureMap &g = gameData.graphicData;
-	CharaObjs &balls = gameData.charaInfo.balls;
-	for_each(balls.begin(), balls.end(), boost::bind(DrawBall, _1, g));
+void DrawAllBalls(const Gamedata &gameData){
+	//PictureMap &g = gameData.graphicData;
+	//CharaObjs &balls = gameData.charaInfo.balls;
+	boost::for_each(gameData.charaInfo.balls, boost::bind(DrawBall, _1, gameData.graphicData));
 }
 
 

@@ -102,7 +102,7 @@ void UpdateBombBit(CharaObj& c);
 void UpdateBombBits(Gamedata& gameData);
 void MakeFirstBall(CharaObj& c);
 void MoveAllBalls(Gamedata& gameData);
-void DrawAllBalls(Gamedata &gameData);
+void DrawAllBalls(const Gamedata &gameData);
 
 void DrawChallengeChange(Gamedata& gameData);
 

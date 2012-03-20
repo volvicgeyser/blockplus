@@ -7,6 +7,37 @@ namespace Minigame{
 
 //ボールの移動関数
 	
+
+
+//めもめも
+//ボールの移動
+//・壁にあたる
+//・ブロックに当たる
+//
+
+
+
+//ボールが消える条件
+//・下に落ちる
+//
+//
+
+		
+//ブロックが消える条件
+//・UNBREAKABLE以外のブロックにぶつかった時
+//
+//
+
+//ブロックの削除に使う関数(*未使用)
+//叙述関数
+bool BlockDeleter(CharaObj& block, const PointF virtualP, const PointF ball){
+			const bool isCrashedLR = IsCrashed(virtualP.x(), ball.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+			const bool isCrashedUD = IsCrashed(ball.x(), virtualP.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+			const bool isCrashed_flag = isCrashedLR || isCrashedUD;
+			return isCrashed_flag;
+}
+
+
 void MoveAllBalls(Gamedata &gameData){
 	CharaObjs &balls = gameData.charaInfo.balls;
 	CharaObjs &blocks = gameData.charaInfo.blocks;
@@ -15,15 +46,15 @@ void MoveAllBalls(Gamedata &gameData){
 	CharaObjs &freeze_bits = gameData.charaInfo.freeze_bits;
 
 	for(int i = 0; i < boost::numeric_cast<int>(balls.size()); i++){
-		CharaObj& ball = balls[i];
-		const PointF virtualP = ball.v + ball.p;
-		bool IsCrashedVW_flag = IsCrashedVerticalWall(ball.p.x(), ball.v.x(), BALL_SIZE);
-		bool IsCrashedHW_flag = IsCrashedHorizontalWall(ball.p.y(), ball.v.y(), BALL_SIZE);
+		//CharaObj& ball = balls[i];
+		const PointF virtualP = balls[i].v + balls[i].p;
+		const bool IsCrashedVW_flag = IsCrashedVerticalWall(balls[i].p.x(), balls[i].v.x(), BALL_SIZE);
+		const bool IsCrashedHW_flag = IsCrashedHorizontalWall(balls[i].p.y(), balls[i].v.y(), BALL_SIZE);
 		bool block_delete_flag = false;
 		bool ball_delete_flag = false;
 
 		if(IsCrashedVW_flag){
-			ball.v.x( ball.v.x() * -1.0f);
+			balls[i].v.x( balls[i].v.x() * -1.0f);
 		}
 		if(IsCrashedHW_flag){
 			if(virtualP.y() < HORIZONTAL_WALL_MIN){
@@ -39,43 +70,49 @@ void MoveAllBalls(Gamedata &gameData){
 				
 			}
 			
-			ball.v.y( ball.v.y() * -1.0f);
+			balls[i].v.y( balls[i].v.y() * -1.0f);
 		}
 
 		//バーとの当たり判定
 		for(int j = 0; j < boost::numeric_cast<int>(bars.size()); j++){
 
 			CharaObj& bar = bars[j];
-			bool IsCrashedLR = IsCrashed(virtualP.x(), ball.p.y(), bar.p.x(), bar.p.y(), BALL_SIZE, BALL_SIZE, BAR_SIZE_X, BAR_SIZE_Y);
-			bool IsCrashedUD = IsCrashed(ball.p.x(), virtualP.y(), bar.p.x(), bar.p.y(), BALL_SIZE, BALL_SIZE, BAR_SIZE_X, BAR_SIZE_Y);
-			bool IsCrashed_flag = IsCrashedLR || IsCrashedUD;
+			const bool IsCrashedLR = IsCrashed(virtualP.x(), balls[i].p.y(), bar.p.x(), bar.p.y(), BALL_SIZE, BALL_SIZE, BAR_SIZE_X, BAR_SIZE_Y);
+			const bool IsCrashedUD = IsCrashed(balls[i].p.x(), virtualP.y(), bar.p.x(), bar.p.y(), BALL_SIZE, BALL_SIZE, BAR_SIZE_X, BAR_SIZE_Y);
+			const bool IsCrashed_flag = IsCrashedLR || IsCrashedUD;
 			
 			//かなり甘めの当たり判定
 			if(IsCrashedLR){
-				ball.v.x( ball.v.x() * -1.0f);
+				balls[i].v.x( balls[i].v.x() * -1.0f);
 			}
 			if(IsCrashedUD){
-				ball.v.y( ball.v.y() * -1.0f);
+				balls[i].v.y( balls[i].v.y() * -1.0f);
 			}
 			if(IsCrashed_flag){
 				//バーはX座標にしか移動しないのでspeedがそのままX座標の移動変化量になる
 				float vx = bar.v.x();
-				ball.v.x( ball.v.x() + bar.v.x() * BALL_SLIDE_COEFFECIENT );
+				balls[i].v.x( balls[i].v.x() + bar.v.x() * BALL_SLIDE_COEFFECIENT );
 
 			}
 		}
+		//boost::for_each(blocks, boost::bind(
+		//
 		
+		//衝突したブロックの削除
+		//CharaObjs::iterator it = std::remove_if(blocks.begin(), blocks.end() , boost::bind(BlockDeleter, _1, virtualP, balls[i].p));
+		//blocks.erase(it, blocks.end());
+
 		for(int j = 0; j < static_cast<int>(blocks.size()); j++){
 			CharaObj& block = blocks[j];
-			bool isCrashedLR = IsCrashed(virtualP.x(), ball.p.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-			bool isCrashedUD = IsCrashed(ball.p.x(), virtualP.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-			bool isCrashed_flag = isCrashedLR || isCrashedUD;
+			const bool isCrashedLR = IsCrashed(virtualP.x(), balls[i].p.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+			const bool isCrashedUD = IsCrashed(balls[i].p.x(), virtualP.y(), block.p.x(), block.p.y(), BALL_SIZE, BALL_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+			const bool isCrashed_flag = isCrashedLR || isCrashedUD;
 
 			if(isCrashedLR){
-				ball.v.x( ball.v.x() * -1.0f);
+				balls[i].v.x( balls[i].v.x() * -1.0f);
 			}
 			if(isCrashedUD){
-				ball.v.y( ball.v.y() * -1.0f);
+				balls[i].v.y( balls[i].v.y() * -1.0f);
 			}
 			if(isCrashed_flag){
 				EffectBlock(block, gameData);
@@ -91,7 +128,7 @@ void MoveAllBalls(Gamedata &gameData){
 			}
 		}
 		if(ball_delete_flag)	balls.erase(balls.begin() + i);
-		else	ball.p += ball.v;
+		else	balls[i].p += balls[i].v;
 	}
 }
 

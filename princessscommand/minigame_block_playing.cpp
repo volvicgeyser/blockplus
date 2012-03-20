@@ -4,6 +4,12 @@
 namespace Minigame{
 	namespace Block{
 	
+
+//static void CountDrawableObj(LtdDrawableObj obj){
+//    if(obj.limit <= obj.count){
+//        
+//    }
+//}
 void Update_Playing(Gamedata& gameData){
 	UpdateBars(gameData);
 	MoveAllBalls(gameData);
@@ -16,6 +22,7 @@ void Update_Playing(Gamedata& gameData){
 	UpdateBlockBits(gameData);
 
 	//UpdateLtdDrbObjŠÖ”‚É‚Ü‚Æ‚ß‚éI
+	//boost::for_each(gameData.ltdDrawableObjs, boost::bind(_
 	for(int i = 0; i < boost::numeric_cast<int>(gameData.ltdDrawableObjs.size()); i++){
 		LtdDrawableObj& obj = gameData.ltdDrawableObjs[i];
 		if(obj.limit <= obj.count){
